@@ -1,11 +1,11 @@
 import statistics as Stat
 
 # prints a menu to the console to get user directions
-def menu(outputFile):
+def menu (outputFile):
     answer = 0
     mydata = enterData() # gets the dataset from the user
 
-    while(answer != 7):
+    while answer != 7:
         if answer < 0 or answer > 7:
             print("That is not a valid response. Please try again")
         else:
@@ -55,7 +55,10 @@ def calcMedian(data, file):
     file.write("Median: {}\n".format(Stat.median(data)))
 
 def calcMode(data, file):
-    file.write("Mode: {}\n".format(Stat.mode(data)))
+    try:
+        file.write("Mode: {}\n".format(Stat.mode(data)))
+    except:
+        file.write("A distinct Mode does not exist for this data.\n")
 
 def standardDeviation(data, file):
     file.write("Sample Standard Deviation: {}\n".format(Stat.stdev(data)))
