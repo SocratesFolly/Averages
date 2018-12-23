@@ -1,4 +1,5 @@
 import statistics as Stat
+from os import system, name
 
 # prints a menu to the console to get user directions
 def menu (outputFile):
@@ -6,6 +7,7 @@ def menu (outputFile):
     mydata = enterData() # gets the dataset from the user
 
     while answer != 7:
+        clearConsole()
         if answer < 0 or answer > 7:
             print("That is not a valid response. Please try again")
         else:
@@ -62,6 +64,12 @@ def calcMode(data, file):
 
 def standardDeviation(data, file):
     file.write("Sample Standard Deviation: {}\n".format(Stat.stdev(data)))
+
+def clearConsole():
+    if name == "nt":
+        _ = system('cls')
+    else:
+        _ = system('clear')
 
 def main():
     output = open("Averages.txt", "w")
