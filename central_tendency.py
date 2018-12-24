@@ -1,5 +1,15 @@
+# Program to calculate and visualize measures of central tendency
+# Author: Ryan Cummings
+# Last updated: 12/21/2018
+
 import statistics as Stat
 from os import system, name
+import numpy as np
+import matplotlib.pyplot as plt
+# TODO: change python lists to numpy arrays; Wrap in try/except to check for typing
+#       create functions to plot by histogram etc.
+
+
 
 # prints a menu to the console to get user directions
 def menu (outputFile):
